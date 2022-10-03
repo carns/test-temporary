@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: "Mochi CLA Assistant"
         if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA') || github.event_name == 'pull_request_target'
-        # Beta Release
         uses: cla-assistant/github-action@v2.2.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -27,7 +26,7 @@ jobs:
 
          #below are the optional inputs - If the optional inputs are not given, then default values will be taken
           #remote-organization-name: enter the remote organization name where the signatures should be stored (Default is storing the signatures in the same repository)
-          remote-organization-name: 'mochi-hpc-experiments'
+          remote-organization-name: 'mochi-hpc'
           #remote-repository-name:  enter the  remote repository name where the signatures should be stored (Default is storing the signatures in the same repository)
           remote-repository-name: 'mochi-cla-assistant'
           #create-file-commit-message: 'For example: Creating file for storing CLA Signatures'
